@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Intranet - Iniciar Sesión</title>
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+    <body>
+
+        <!-------------------------------------------------------------->
+        <!--Hago carga dinamica de Header & Footer:
+            <header>
+                <div class="nav-container">
+                    <a href="#" class="logo">KineVital</a>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="active">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="testimonios.html">Testimonios</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>            
+                    </ul>
+                </div>
+            </header>
+        -->
+        <!-- En index.html, nosotros.html, etc. 
+        <header id="main-header" data-include="header.html"></header>   -->
+        <header id="header-container" data-include="header.html"></header>
+        <!-------------------------------------------------------------->
+
+        <main class="container">
+            <div class="login-card">
+                <div class="text-center" style="margin-bottom: 2rem">
+                    <h1 style="color: var(--primary); font-size: 1.8rem">KineVital</h1>
+                    <p style="color: var(--gray); font-size: 0.9rem; margin-top: 0.3rem">Portal Pacientes</p>
+                </div>
+
+                <!-- Redirige directamente al Home Interno al presionar el botón -->
+                <form action="paciente_perfil.html" method="GET">
+                    <div class="form-group">
+                        <label for="usuario">Usuario</label>
+                        <input
+                            type="text"
+                            id="usuario"
+                            name="usuario"
+                            required
+                            placeholder="Ej: admin123 o med_gomez"
+                        />
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 2rem">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" required placeholder="••••••••" />
+                    </div>
+
+                    <button type="submit" class="btn w-100">Iniciar Sesión</button>
+                </form>
+
+                <button type="button" class="btn w-100"><a href="paciente_registro.html">Registro</a></button>
+                
+            </div>
+        </main>
+
+        <!-------------------------------------------------------------->
+        <!--Hago carga dinamica de Header & Footer:
+        <footer>
+            <p>&copy; 2026 KineVital - Consultorio de Kinesiología. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="login.html" class="intranet-link">🔑 Acceso Interno (Personal)</a>
+            </div>
+        </footer>
+    
+        <footer id="main-footer" data-include="footer.html"></footer>   -->
+        <footer id="footer-container" data-include="footer.html"></footer>
+        <!-------------------------------------------------------------->
+
+    </body>
+</html>
+
+<!-- Tu llamada al script sigue igual al final -->
+<script src="../js/header.js"></script>
+<script src="../js/footer.js"></script>

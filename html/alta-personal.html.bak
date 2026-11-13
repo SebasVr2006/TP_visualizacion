@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet - Alta de Personal</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .form-container { background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 2rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .form-group { margin-bottom: 0.5rem; }
+        .form-group label { display: block; margin-bottom: 0.4rem; font-weight: 600; }
+        .form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+        .full-width { grid-column: span 2; }
+        .required-mark { color: #dc3545; margin-left: 3px; }
+    </style>
+</head>
+<body>
+    <header style="border-bottom: 3px solid var(--secondary);">
+        <nav class="nav-container">
+            <a href="home-interno.html" class="logo">KineVital <span style="font-size: 0.9rem; color: var(--secondary); font-weight: normal;">(Intranet)</span></a>
+            <ul class="nav-menu">
+                <li><a href="home-interno.html">Panel Principal</a></li>
+                <li><a href="registro-pacientes.html">Registrar Paciente</a></li>
+                <li><a href="historias-clinicas.html">Historias Clínicas</a></li>
+                <li><a href="alta-personal.html" class="active">Alta de Personal</a></li>
+                <li><a href="index.html" style="background-color: #dc3545; color: white; padding: 0.4rem 1rem; border-radius: 5px; text-decoration: none;">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container" style="max-width: 850px;">
+        <h1 style="color: var(--primary); margin-bottom: 0.5rem;">Registro de Nuevo Personal</h1>
+        <p style="color: var(--gray); margin-bottom: 2rem;">Inscripción de nuevos usuarios para el uso de la Intranet corporativa.</p>
+
+        <div class="form-container">
+            <form action="#" method="POST">
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="rol">Tipo de Personal / Perfil de Acceso<span class="required-mark">*</span></label>
+                        <select id="rol" name="rol" required>
+                            <option value="" disabled selected>Seleccione el rol del nuevo usuario...</option>
+                            <option value="admin">Personal Administrativo (Gestión y Recepción)</option>
+                            <option value="medico">Personal Médico / Kinesiólogo Especialista</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre(s)<span class="required-mark">*</span></label>
+                        <input type="text" id="nombre" required placeholder="Ej: Roberto">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apellido">Apellido(s)<span class="required-mark">*</span></label>
+                        <input type="text" id="apellido" required placeholder="Ej: Fernández">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="matricula">Matrícula Profesional <span style="font-weight:normal; color:var(--gray);">(Solo Médicos)</span></label>
+                        <input type="text" id="matricula" placeholder="N° de Matrícula Nacional/Provincial">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="legajo">Número de Legajo Interno<span class="required-mark">*</span></label>
+                        <input type="text" id="legajo" required placeholder="Ej: LEG-2026-04">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="usuario_nuevo">Nombre de Usuario Asignado<span class="required-mark">*</span></label>
+                        <input type="text" id="usuario_nuevo" required placeholder="Ej: r_fernandez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pass_nueva">Contraseña Temporal<span class="required-mark">*</span></label>
+                        <input type="password" id="pass_nueva" required placeholder="••••••••">
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; display: flex; justify-content: flex-end; gap: 1rem;">
+                    <button type="reset" class="btn" style="background-color: var(--gray);">Limpiar</button>
+                    <button type="submit" class="btn">Dar de Alta Usuario</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 KineVital - Panel de Recursos Humanos.</p>
+    </footer>
+</body>
+</html>

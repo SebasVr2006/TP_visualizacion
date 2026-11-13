@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet - Iniciar Sesión</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .login-card {
+            background: var(--white);
+            max-width: 400px;
+            margin: 4rem auto;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .form-group input:focus {
+            outline: 2px solid var(--secondary);
+        }
+        .w-100 {
+            width: 100%;
+            text-align: center;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back-link:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="login-card">
+            <div class="text-center" style="margin-bottom: 2rem;">
+                <h1 style="color: var(--primary); font-size: 1.8rem;">KineVital</h1>
+                <p style="color: var(--gray); font-size: 0.9rem; margin-top: 0.3rem;">Portal Interno de Gestión</p>
+            </div>
+            
+            <!-- Redirige directamente al Home Interno al presionar el botón -->
+            <form action="home-interno.html" method="GET">
+                <div class="form-group">
+                    <label for="usuario">Usuario / Legajo</label>
+                    <input type="text" id="usuario" name="usuario" required placeholder="Ej: admin123 o med_gomez">
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 2rem;">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                </div>
+                
+                <button type="submit" class="btn w-100">Iniciar Sesión</button>
+            </form>
+
+            <a href="index.html" class="back-link">← Volver al sitio público</a>
+        </div>
+    </main>
+</body>
+</html>

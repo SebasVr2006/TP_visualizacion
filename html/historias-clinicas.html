@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet - Historias Clínicas</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .search-box { background: var(--white); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 2rem; display: flex; gap: 1rem; }
+        .search-box input { flex: 1; padding: 0.75rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+        .table-responsive { background: var(--white); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th, td { padding: 1rem; border-bottom: 1px solid #eee; }
+        th { background-color: var(--primary); color: var(--white); font-weight: 600; }
+        tr:hover { background-color: #f1f5f9; }
+        .badge { padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+        .badge-trauma { background: #ffeea6; color: #856404; }
+        .badge-sport { background: #d4edda; color: #155724; }
+    </style>
+</head>
+<body>
+    <header style="border-bottom: 3px solid var(--secondary);">
+        <nav class="nav-container">
+            <a href="home-interno.html" class="logo">KineVital <span style="font-size: 0.9rem; color: var(--secondary); font-weight: normal;">(Intranet)</span></a>
+            <ul class="nav-menu">
+                <li><a href="home-interno.html">Panel Principal</a></li>
+                <li><a href="interno_paciente_registro.html">Registrar Paciente</a></li>
+                <li><a href="historias-clinicas.html" class="active">Historias Clínicas</a></li>
+                <li><a href="alta-personal.html">Alta de Personal</a></li>
+                <li><a href="index.html" style="background-color: #dc3545; color: white; padding: 0.4rem 1rem; border-radius: 5px; text-decoration: none;">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 style="color: var(--primary); margin-bottom: 0.5rem;">Repositorio de Historias Clínicas</h1>
+        <p style="color: var(--gray); margin-bottom: 2rem;">Búsqueda y consulta de fichas médicas de pacientes activos.</p>
+
+        <div class="search-box">
+            <input type="text" placeholder="Buscar por DNI, Apellido o Profesional a cargo...">
+            <button class="btn">Buscar</button>
+        </div>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Documento</th>
+                        <th>Profesional Asignado</th>
+                        <th>Diagnóstico / Patología</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Carlos Mendoza</strong></td>
+                        <td>34.567.890</td>
+                        <td>Lic. Patricia Rodríguez</td>
+                        <td><span class="badge badge-trauma">Dolor Lumbar Severo</span></td>
+                        <td><a href="#" style="color: var(--secondary); font-weight: bold; text-decoration: none;">Ver Ficha</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Laura Galliano</strong></td>
+                        <td>38.123.456</td>
+                        <td>Lic. Mariano Gómez</td>
+                        <td><span class="badge badge-sport">Post-quirúrgico Rodilla (LCA)</span></td>
+                        <td><a href="#" style="color: var(--secondary); font-weight: bold; text-decoration: none;">Ver Ficha</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 KineVital - Registro Clínico Protegido.</p>
+    </footer>
+</body>
+</html>
