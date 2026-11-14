@@ -154,6 +154,7 @@ main {
 
 /* --- PIE DE PÁGINA --- */
 footer {
+    box-sizing: border-box;
     background-color: var(--primary);
     color: var(--white);
     text-align: center;
@@ -217,9 +218,10 @@ footer {
 
 /* --- LogIn Usuario Paciente --- */
 .login-card {
+    width: 110vh;
     background: var(--white);
-    max-width: 400px;
-    margin: 4rem auto;
+    max-width: 55vh;
+    margin: 3rem auto;
     padding: 2.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -263,6 +265,18 @@ footer {
 
 .back-link:hover {
     color: var(--primary);
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-registro {
+    margin-top: 1rem;
+}
+
+.btn-registro a{
+    color: white;
 }
 
 /* --- LogIn Usuario Paciente --- */

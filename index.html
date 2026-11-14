@@ -1,17 +1,20 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Kinesiología & Rehabilitación - Inicio</title>
-        <!-- Vinculación al archivo CSS externo -->
-        <!--link rel="stylesheet" href="styles.css"-->
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
-    <body>
-        
-        <!-------------------------------------------------------------->
-        <!--Hago carga dinamica de Header & Footer:
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kinesiología & Rehabilitación - Inicio</title>
+    <!-- Vinculación al archivo CSS externo -->
+    <!--link rel="stylesheet" href="styles.css"-->
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-------------------------------------------------------------->
+    <!--Hago carga dinamica de Header & Footer:
             <header>
                 <div class="nav-container">
                     <a href="#" class="logo">KineVital</a>
@@ -25,30 +28,46 @@
                 </div>
             </header>
         -->
-        <!-- En index.html, nosotros.html, etc. 
+    <!-- En index.html, nosotros.html, etc. 
         <header id="main-header" data-include="header.html"></header>   -->
-        <header id="header-container" data-include="html/header_main.html"></header>
-        <!-------------------------------------------------------------->
+    <header id="header-container" data-include="html/header_main.html"></header>
+    <!-------------------------------------------------------------->
 
-        <main class="container">
-            <section class="hero-section grid-2">
-                <div class="hero-content">
-                    <h1 class="hero-title">Recupera tu movilidad, mejora tu vida</h1>
-                    <p class="hero-text">
-                        Ofrecemos tratamientos personalizados de kinesiología, fisioterapia y rehabilitación motriz para
-                        ayudarte a volver a tus actividades diarias sin dolor.
-                    </p>
-                    <a href="html/paciente_login.html" class="btn">Reserva tu Turno</a>
-                </div>
-                <div class="hero-image-container">
-                    <!-- Reemplazar src con la ruta real de tu imagen cuando la tengas -->
-                    <img src="img/Kine_Vital_IsoTipo.jpeg" alt="Imagen del Consultorio" class="hero-image" />
-                </div>
-            </section>
-        </main>
+    <main class="container">
+        <section class="hero-section grid-2">
+            <div class="hero-content">
+                <h1 class="hero-title">Recupera tu movilidad, mejora tu vida</h1>
+                <p class="hero-text">
+                    Ofrecemos tratamientos personalizados de kinesiología, fisioterapia y rehabilitación motriz para
+                    ayudarte a volver a tus actividades diarias sin dolor.
+                </p>
+                <a href="html/paciente_login.html" class="btn">Reserva tu Turno</a>
+            </div>
+            <div class="hero-image-container">
+                <!-- Reemplazar src con la ruta real de tu imagen cuando la tengas -->
+                <img src="img/Kine_Vital_IsoTipo.jpeg" alt="Imagen del Consultorio" class="hero-image" />
+            </div>
+        </section>
 
-        <!-------------------------------------------------------------->
-        <!--Hago carga dinamica de Header & Footer:
+        <section class="container testimonios-container">
+            <h1 class="section-title text-center">Experiencias de Nuestros Pacientes</h1>
+
+            <div class="testimonial-box">
+                <p>"Excelente atención. Llegué con un dolor lumbar severo y tras unas semanas de sesiones con los
+                    kinesiólogos volví a hacer ejercicio sin molestias."</p>
+                <span class="patient-name">- Carlos M., Paciente de Traumatología</span>
+            </div>
+
+            <div class="testimonial-box">
+                <p>"La calidez humana y el profesionalismo del equipo es increíble. Me acompañaron perfectamente en toda
+                    mi rehabilitación post-quirúrgica de rodilla."</p>
+                <span class="patient-name">- Laura G., Paciente Deportiva</span>
+            </div>
+        </section>
+    </main>
+
+    <!-------------------------------------------------------------->
+    <!--Hago carga dinamica de Header & Footer:
             <footer>
                 <p>&copy; 2026 KineVital - Consultorio de Kinesiología. Todos los derechos reservados.</p>
                 <div class="footer-links">
@@ -57,10 +76,11 @@
             </footer>
         
         <footer id="main-footer" data-include="footer.html"></footer>   -->
-        <footer id="footer-container" data-include="html/footer_main.html"></footer>
-        <!-------------------------------------------------------------->
+    <footer id="footer-container" data-include="html/footer_main.html"></footer>
+    <!-------------------------------------------------------------->
 
-    </body>
+</body>
+
 </html>
 
 <!-- Tu llamada al script sigue igual al final -->
