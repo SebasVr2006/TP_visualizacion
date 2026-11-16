@@ -48,8 +48,10 @@ main {
 }
 
 .logo {
+    display: flex;
     font-size: 1.5rem;
     font-weight: bold;
+    align-self: center;
     color: var(--primary);
     text-decoration: none;
 }
@@ -77,6 +79,14 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 3rem 2rem;
+}
+
+.logo-titulo {
+    width: auto;
+    height: 5vh;
+    align-self: center;
+    margin-right: 1vh;
+    filter: invert(26%) sepia(59%) saturate(691%) hue-rotate(151deg) brightness(97%) contrast(84%);
 }
 
 .btn {
@@ -131,11 +141,8 @@ main {
 
 .hero-image {
     max-height: 500px;
-    /* Controla el tamaño vertical; ajusta este número a tu gusto */
     width: auto;
-    /* El ancho se calcula automáticamente en proporción a la altura */
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .instalaciones-image-container {
@@ -146,9 +153,7 @@ main {
 
 .instalaciones-image {
     max-height: 300px;
-    /* Controla el tamaño vertical; ajusta este número a tu gusto */
     width: auto;
-    /* El ancho se calcula automáticamente en proporción a la altura */
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
@@ -276,7 +281,7 @@ a {
     margin-top: 1rem;
 }
 
-.btn-registro a{
+.btn-registro a {
     color: white;
 }
 

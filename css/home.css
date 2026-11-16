@@ -13,6 +13,20 @@
     display: block;
 }
 
-.container .testimonios-container {
+.container .instalaciones {
     margin-top: 4.2rem;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5vh;
+    justify-self: center;
+}
+
+.img-instalaciones {
+    margin-top: 5vh;
+    width: 35rem;
+    height: auto;
+    border-radius: 0.5rem;
 }
