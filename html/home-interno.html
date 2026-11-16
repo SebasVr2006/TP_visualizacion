@@ -1,83 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Control Interno - KineVital</title>
+    <link rel="stylesheet" href="../css/interno.css">
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .menu-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            text-align: center;
-            border-top: 4px solid var(--secondary);
-            transition: transform 0.3s;
-        }
-        .menu-card:hover {
-            transform: translateY(-5px);
-        }
-        .menu-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        .menu-card p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-        .btn-logout {
-            background-color: #dc3545;
-        }
-        .btn-logout:hover {
-            background-color: #bd2130;
-        }
-    </style>
 </head>
+
 <body>
-    <!-- Header exclusivo de la Intranet -->
-<header style="border-bottom: 3px solid var(--secondary);">
-    <nav class="nav-container">
-        <a href="home-interno.html" class="logo">KineVital <span style="font-size: 0.9rem; color: var(--secondary); font-weight: normal;">(Intranet)</span></a>
-        <ul class="nav-menu">
-            <li><a href="home-interno.html">Panel Principal</a></li>
-            <li><a href="interno_paciente_registro.html">Registrar Paciente</a></li>
-            <li><a href="historias-clinicas.html">Historias Clínicas</a></li>
-            <li><a href="alta-personal.html">Alta de Personal</a></li>
-            <li><a href="../index.html" style="background-color: #dc3545; color: white; padding: 0.4rem 1rem; border-radius: 5px; text-decoration: none;">Cerrar Sesión</a></li>
-        </ul>
-    </nav>
-</header>
+
+    <header style="border-bottom: 3px solid var(--secondary);">
+        <nav class="nav-container">
+            <a href="home-interno.html" class="logo">KineVital <span class="subtitulo">(Intranet)</span></a>
+            <ul class="nav-menu">
+                <li><a href="home-interno.html">Panel Principal</a></li>
+                <li><a href="interno_paciente_registro.html">Registrar Paciente</a></li>
+                <li><a href="historias-clinicas.html">Historias Clínicas</a></li>
+                <li><a href="alta-personal.html">Alta de Personal</a></li>
+                <li><a class="btn-cerrar-sesion" style="color: white;" href="../index.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main class="container">
         <div style="margin-bottom: 3rem;">
             <h1 style="color: var(--primary);">Bienvenido al Sistema de Gestión Clínico</h1>
-            <p style="color: var(--gray);">Seleccione una acción desde el menú superior o utilice los accesos rápidos a continuación.</p>
+            <p style="color: var(--gray);">Seleccione una acción desde el menú superior o utilice los accesos rápidos a
+                continuación.</p>
         </div>
 
         <div class="dashboard-grid">
             <div class="menu-card">
                 <h3>Admisión de Pacientes</h3>
-                <p>Dar de alta un nuevo paciente en el sistema, asignar un profesional de la salud y detallar su patología de ingreso.</p>
+                <p>Dar de alta un nuevo paciente en el sistema, asignar un profesional de la salud y detallar su
+                    patología de ingreso.</p>
                 <a href="interno_paciente_registro.html" class="btn">Ingresar Ficha</a>
             </div>
 
             <div class="menu-card">
                 <h3>Historias Clínicas</h3>
-                <p>Consulte el listado de fichas médicas cargadas, busque por documento del paciente y verifique las patologías registradas.</p>
+                <p>Consulte el listado de fichas médicas cargadas, busque por documento del paciente y verifique las
+                    patologías registradas.</p>
                 <a href="historias-clinicas.html" class="btn">Ver Listado</a>
             </div>
 
             <div class="menu-card" style="border-top-color: var(--dark);">
                 <h3>Alta de Personal</h3>
-                <p>Incorpore nuevos perfiles al sistema diferenciando credenciales y permisos entre el equipo administrativo y el cuerpo médico.</p>
+                <p>Incorpore nuevos perfiles al sistema diferenciando credenciales y permisos entre el equipo
+                    administrativo y el cuerpo médico.</p>
                 <a href="alta-personal.html" class="btn" style="background-color: var(--dark);">Gestionar Personal</a>
             </div>
         </div>
@@ -88,4 +60,5 @@
         <p>&copy; 2026 KineVital - Sistema de Gestión Interna. Restringido para personal autorizado.</p>
     </footer>
 </body>
+
 </html>

@@ -1,0 +1,10 @@
+.form-group input[readonly] {
+    background-color: #f1f3f5;
+    color: #495057;
+    cursor: not-allowed;
+    border-color: #dee2e6;
+}
+
+.form-group input[readonly]:focus {
+    outline: none;
+}

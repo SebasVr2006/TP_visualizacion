@@ -4,84 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel Interno - Registro de Pacientes</title>
+    <link rel="stylesheet" href="../css/interno.css">
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        /* Estilos exclusivos para la sección interna */
-        .badge-interno {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-        .form-group {
-            margin-bottom: 0.5rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.4rem;
-            font-weight: 600;
-            color: var(--dark);
-        }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-            background-color: var(--white);
-        }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: 2px solid var(--secondary);
-        }
-        .full-width {
-            grid-column: span 2;
-        }
-        .required-mark {
-            color: #dc3545;
-            margin-left: 3px;
-        }
-        .form-actions {
-            margin-top: 2rem;
-            display: flex;
-            gap: 1rem;
-            justify-content: flex-end;
-        }
-        .btn-secondary {
-            background-color: var(--gray);
-        }
-        .btn-secondary:hover {
-            background-color: var(--dark);
-        }
-        @media (max-width: 768px) {
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .full-width {
-                grid-column: span 1;
-            }
-        }
-    </style>
 </head>
 <body>
 <!-- Reemplaza el <header> de tu archivo registro-pacientes.html por este: -->
 <header style="border-bottom: 3px solid var(--secondary);">
     <nav class="nav-container">
-        <a href="home-interno.html" class="logo">KineVital <span style="font-size: 0.9rem; color: var(--secondary); font-weight: normal;">(Intranet)</span></a>
+        <a href="home-interno.html" class="logo">KineVital <span class="subtitulo">(Intranet)</span></a>
         <ul class="nav-menu">
             <li><a href="home-interno.html">Panel Principal</a></li>
             <li><a href="registro-pacientes.html">Registrar Paciente</a></li>
             <li><a href="historias-clinicas.html">Historias Clínicas</a></li>
             <li><a href="alta-personal.html">Alta de Personal</a></li>
-            <li><a href="index.html" style="background-color: #dc3545; color: white; padding: 0.4rem 1rem; border-radius: 5px; text-decoration: none;">Cerrar Sesión</a></li>
+            <li><a class="btn-cerrar-sesion" href="index.html" style="color: white;">Cerrar Sesión</a></li>
         </ul>
     </nav>
 </header>

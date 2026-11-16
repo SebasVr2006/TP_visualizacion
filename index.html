@@ -13,25 +13,7 @@
 
 <body>
 
-    <!-------------------------------------------------------------->
-    <!--Hago carga dinamica de Header & Footer:
-            <header>
-                <div class="nav-container">
-                    <a href="#" class="logo">KineVital</a>
-                    <ul class="nav-menu">
-                        <li><a href="index.html" class="active">Inicio</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="servicios.html">Servicios</a></li>
-                        <li><a href="testimonios.html">Testimonios</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>            
-                    </ul>
-                </div>
-            </header>
-        -->
-    <!-- En index.html, nosotros.html, etc. 
-        <header id="main-header" data-include="header.html"></header>   -->
     <header id="header-container" data-include="html/header_main.html"></header>
-    <!-------------------------------------------------------------->
 
     <main class="container">
         <section class="hero-section grid-2">
@@ -44,7 +26,6 @@
                 <a href="html/paciente_login.html" class="btn">Reserva tu Turno</a>
             </div>
             <div class="hero-image-container">
-                <!-- Reemplazar src con la ruta real de tu imagen cuando la tengas -->
                 <img src="img/Kine_Vital_IsoTipo.jpeg" alt="Imagen del Consultorio" class="hero-image" />
             </div>
         </section>
@@ -66,23 +47,10 @@
         </section>
     </main>
 
-    <!-------------------------------------------------------------->
-    <!--Hago carga dinamica de Header & Footer:
-            <footer>
-                <p>&copy; 2026 KineVital - Consultorio de Kinesiología. Todos los derechos reservados.</p>
-                <div class="footer-links">
-                    <a href="login.html" class="intranet-link">🔑 Acceso Interno (Personal)</a>
-                </div>
-            </footer>
-        
-        <footer id="main-footer" data-include="footer.html"></footer>   -->
     <footer id="footer-container" data-include="html/footer_main.html"></footer>
-    <!-------------------------------------------------------------->
 
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
 </body>
 
 </html>
-
-<!-- Tu llamada al script sigue igual al final -->
-<script src="js/header.js"></script>
-<script src="js/footer.js"></script>

@@ -1,57 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KineVital - Mi Perfil</title>
-    <!-- Asegúrate de que esta ruta apunte correctamente a tu archivo CSS -->
+    <link rel="stylesheet" href="../css/paciente-perfil.css">
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        /* Estilo sutil para reforzar visualmente que los campos son de solo lectura */
-        .form-group input[readonly] {
-            background-color: #f1f3f5;
-            color: #495057;
-            cursor: not-allowed;
-            border-color: #dee2e6;
-        }
-        .form-group input[readonly]:focus {
-            outline: none; /* Evita el borde turquesa al hacer clic */
-        }
-    </style>
 </head>
-<body>
-        
-        <!-------------------------------------------------------------->
-        <!--Hago carga dinamica de Header & Footer:
-            <header>
-                <div class="nav-container">
-                    <a href="#" class="logo">KineVital</a>
-                    <ul class="nav-menu">
-                        <li><a href="index.html" class="active">Inicio</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="servicios.html">Servicios</a></li>
-                        <li><a href="testimonios.html">Testimonios</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>            
-                    </ul>
-                </div>
-            </header>
-        -->
-        <!-- En index.html, nosotros.html, etc. 
-        <header id="main-header" data-include="header.html"></header>   -->
-        <header id="header-container" data-include="paciente_header.html"></header>
-        <!-------------------------------------------------------------->
 
-    <!-- Contenedor principal con el mismo estilo del LogIn y Registro -->
+<body>
+
+    <header id="header-container" data-include="paciente_header.html"></header>
+
     <main class="login-card" style="max-width: 500px;">
         <div class="text-center">
             <h1 class="logo" style="margin-bottom: 0.5rem; display: block;">KineVital</h1>
-            <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.2rem; font-size: 1.1rem;">¡Registro Exitoso!</p>
+            <p style="color: var(--secondary); font-weight: bold; margin-bottom: 0.2rem; font-size: 1.1rem;">¡Registro
+                Exitoso!</p>
             <p style="color: var(--gray); margin-bottom: 2rem; font-size: 0.95rem;">Perfil Interno del Usuario</p>
         </div>
 
-        <!-- Formulario de Perfil (Solo Lectura) -->
+
         <form>
-            
+
             <!-- Bloque: Datos Personales -->
             <div class="form-group">
                 <label for="name">Nombre Completo</label>
@@ -84,68 +56,33 @@
                 </div>
                 <div class="form-group" style="margin-bottom: 0;">
                     <label for="birthdate">Fecha de Nacimiento</label>
-                    <!-- El formato de fecha interno siempre es AAAA-MM-DD para que el navegador lo dibuje bien -->
                     <input type="date" id="birthdate" name="birthdate" value="1990-05-15" readonly>
                 </div>
             </div>
 
             <!-- Nota informativa en lugar de la casilla de términos -->
-            <div style="background-color: rgba(26, 95, 122, 0.05); border-left: 4px solid var(--primary); padding: 0.75rem; margin-top: 1.5rem; border-radius: 4px;">
+            <div
+                style="background-color: rgba(26, 95, 122, 0.05); border-left: 4px solid var(--primary); padding: 0.75rem; margin-top: 1.5rem; border-radius: 4px;">
                 <p style="font-size: 0.85rem; color: var(--dark); margin: 0;">
-                    💡 Los datos de esta cuenta se encuentran validados de forma interna y no pueden modificarse de manera directa.
+                    💡 Los datos de esta cuenta se encuentran validados de forma interna y no pueden modificarse de
+                    manera directa.
                 </p>
             </div>
 
             <!-- Botón para ir al Panel Principal o Inicio de la Intranet -->
-            <a href="login_paciente.html" class="btn w-100" style="margin-top: 1.5rem; text-decoration: none; display: block; box-sizing: border-box;">Cerrar Sesión Segura</a>
-            
-        </form>
+            <a href="login_paciente.html" class="btn w-100"
+                style="margin-top: 1.5rem; text-decoration: none; display: block; box-sizing: border-box;">Cerrar Sesión
+                Segura</a>
 
-        <!-- Enlace para cerrar sesión de forma segura 
-        <a href="login.html" class="back-link">Cerrar Sesión Segura</a> -->
+        </form>
 
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // 1. Intentamos obtener los datos guardados en el almacenamiento local
-            const datosGuardados = localStorage.getItem('usuarioRegistrado');
-
-            if (datosGuardados) {
-                // 2. Convertimos el texto JSON de vuelta a un objeto de JavaScript
-                const usuario = JSON.parse(datosGuardados);
-
-                // 3. Inyectamos los valores reales en cada uno de los campos readonly
-                document.getElementById('name').value = usuario.nombre;
-                document.getElementById('dni').value = usuario.dni;
-                document.getElementById('phone').value = usuario.telefono;
-                document.getElementById('email').value = usuario.email;
-                document.getElementById('username').value = usuario.usuario;
-                document.getElementById('birthdate').value = usuario.nacimiento;
-            } else {
-                // En caso de que alguien entre a perfil.html directamente sin registrarse
-                alert('No se encontraron datos de registro.');
-                window.location.href = 'login.html'; 
-            }
-        });
-    </script>
-
-    <!-------------------------------------------------------------->
-    <!--Hago carga dinamica de Header & Footer:
-        <footer>
-            <p>&copy; 2026 KineVital - Consultorio de Kinesiología. Todos los derechos reservados.</p>
-            <div class="footer-links">
-                <a href="login.html" class="intranet-link">🔑 Acceso Interno (Personal)</a>
-            </div>
-        </footer>
-    
-    <footer id="main-footer" data-include="footer.html"></footer>   -->
     <footer id="footer-container" data-include="footer.html"></footer>
-    <!-------------------------------------------------------------->
 
+    <script src="../js/paciente-perfil.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
 </body>
-</html>
 
-<!-- Tu llamada al script sigue igual al final -->
-<script src="../js/header.js"></script>
-<script src="../js/footer.js"></script>
+</html>
