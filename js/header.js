@@ -25,7 +25,6 @@ function marcarLinkActivo(contenedor) {
 
         if (destino === paginaActual) {
             link.classList.add("activo");
-            link.setAttribute("aria-current", "page");
         }
     });
 }
