@@ -4,22 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intranet - Alta de Personal</title>
+    <link rel="stylesheet" href="../css/interno.css">
     <link rel="stylesheet" href="../css/alta-personal.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>
-        <nav class="nav-container">
-            <a href="home-interno.html" class="logo">KineVital <span style="font-size: 0.9rem; color: var(--secondary); font-weight: normal;">(Intranet)</span></a>
-            <ul class="nav-menu">
-                <li><a href="home-interno.html">Panel Principal</a></li>
-                <li><a href="interno_paciente_registro.html">Registrar Paciente</a></li>
-                <li><a href="historias-clinicas.html">Historias Clínicas</a></li>
-                <li><a href="alta-personal.html" class="active">Alta de Personal</a></li>
-                <li><a href="index.html" style="background-color: #dc3545; color: white; padding: 0.4rem 1rem; border-radius: 5px; text-decoration: none;">Cerrar Sesión</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header id="header-container" data-include="interno-header.html"></header>
 
     <main class="container" style="max-width: 850px;">
         <h1 style="color: var(--primary); margin-bottom: 0.5rem;">Registro de Nuevo Personal</h1>
@@ -79,5 +69,7 @@
     <footer>
         <p>&copy; 2026 KineVital - Panel de Recursos Humanos.</p>
     </footer>
+
+    <script src="../js/header.js"></script>
 </body>
 </html>

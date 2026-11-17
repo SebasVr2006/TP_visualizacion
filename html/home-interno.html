@@ -11,18 +11,7 @@
 
 <body>
 
-    <header style="border-bottom: 3px solid var(--secondary);">
-        <nav class="nav-container">
-            <a href="home-interno.html" class="logo">KineVital <span class="subtitulo">(Intranet)</span></a>
-            <ul class="nav-menu">
-                <li><a href="home-interno.html">Panel Principal</a></li>
-                <li><a href="interno_paciente_registro.html">Registrar Paciente</a></li>
-                <li><a href="historias-clinicas.html">Historias Clínicas</a></li>
-                <li><a href="alta-personal.html">Alta de Personal</a></li>
-                <li><a class="btn-cerrar-sesion" style="color: white;" href="../index.html">Cerrar Sesión</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header id="header-container" data-include="interno-header.html"></header>
 
     <main class="container">
         <div style="margin-bottom: 3rem;">
@@ -59,6 +48,8 @@
     <footer>
         <p>&copy; 2026 KineVital - Sistema de Gestión Interna. Restringido para personal autorizado.</p>
     </footer>
+
+    <script src="../js/header.js"></script>
 </body>
 
 </html>

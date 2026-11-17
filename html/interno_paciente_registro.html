@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,9 @@
     <link rel="stylesheet" href="../css/interno.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-<!-- Reemplaza el <header> de tu archivo registro-pacientes.html por este: -->
-<header style="border-bottom: 3px solid var(--secondary);">
-    <nav class="nav-container">
-        <a href="home-interno.html" class="logo">KineVital <span class="subtitulo">(Intranet)</span></a>
-        <ul class="nav-menu">
-            <li><a href="home-interno.html">Panel Principal</a></li>
-            <li><a href="registro-pacientes.html">Registrar Paciente</a></li>
-            <li><a href="historias-clinicas.html">Historias Clínicas</a></li>
-            <li><a href="alta-personal.html">Alta de Personal</a></li>
-            <li><a class="btn-cerrar-sesion" href="index.html" style="color: white;">Cerrar Sesión</a></li>
-        </ul>
-    </nav>
-</header>
+    <header id="header-container" data-include="interno-header.html"></header>
 
     <main class="container" style="max-width: 900px;">
         <div class="text-center" style="margin-bottom: 2.5rem;">
@@ -29,16 +19,19 @@
             <p style="color: var(--gray);">Complete los datos del paciente para la apertura de su historia clínica.</p>
         </div>
 
-        <form action="#" method="POST" style="background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-            
-            <h2 style="font-size: 1.2rem; color: var(--secondary); margin-bottom: 1.5rem; border-bottom: 2px solid var(--light); padding-bottom: 0.5rem;">1. Datos Personales Básicos</h2>
-            
+        <form action="#" method="POST"
+            style="background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+
+            <h2
+                style="font-size: 1.2rem; color: var(--secondary); margin-bottom: 1.5rem; border-bottom: 2px solid var(--light); padding-bottom: 0.5rem;">
+                1. Datos Personales Básicos</h2>
+
             <div class="form-grid" style="margin-bottom: 2.5rem;">
                 <div class="form-group">
                     <label for="nombre">Nombre(s)<span class="required-mark">*</span></label>
                     <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Carlos">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="apellido">Apellido(s)<span class="required-mark">*</span></label>
                     <input type="text" id="apellido" name="apellido" required placeholder="Ej: Pérez">
@@ -60,13 +53,16 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Correo Electrónico <span style="font-weight: normal; color: var(--gray); font-size: 0.85rem;">(Opcional)</span></label>
+                    <label for="email">Correo Electrónico <span
+                            style="font-weight: normal; color: var(--gray); font-size: 0.85rem;">(Opcional)</span></label>
                     <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
                 </div>
             </div>
 
-            <h2 style="font-size: 1.2rem; color: var(--secondary); margin-bottom: 1.5rem; border-bottom: 2px solid var(--light); padding-bottom: 0.5rem;">2. Asignación Médica y Diagnóstico</h2>
-            
+            <h2
+                style="font-size: 1.2rem; color: var(--secondary); margin-bottom: 1.5rem; border-bottom: 2px solid var(--light); padding-bottom: 0.5rem;">
+                2. Asignación Médica y Diagnóstico</h2>
+
             <div class="form-grid">
                 <div class="form-group full-width">
                     <label for="profesional">Profesional Médico a Cargo<span class="required-mark">*</span></label>
@@ -79,13 +75,17 @@
                 </div>
 
                 <div class="form-group full-width">
-                    <label for="patologia">Patología / Diagnóstico de Ingreso<span class="required-mark">*</span></label>
-                    <textarea id="patologia" name="patologia" rows="4" required placeholder="Describa la patología actual, síntomas reportados o diagnóstico derivado del médico derivante..."></textarea>
+                    <label for="patologia">Patología / Diagnóstico de Ingreso<span
+                            class="required-mark">*</span></label>
+                    <textarea id="patologia" name="patologia" rows="4" required
+                        placeholder="Describa la patología actual, síntomas reportados o diagnóstico derivado del médico derivante..."></textarea>
                 </div>
 
                 <div class="form-group full-width">
-                    <label for="tratamiento">Tratamiento e Indicaciones a Seguir<span class="required-mark">*</span></label>
-                    <textarea id="tratamiento" name="tratamiento" rows="4" required placeholder="Plan de contingencia, número de sesiones estimadas, agentes físicos a aplicar y ejercicios terapéuticos..."></textarea>
+                    <label for="tratamiento">Tratamiento e Indicaciones a Seguir<span
+                            class="required-mark">*</span></label>
+                    <textarea id="tratamiento" name="tratamiento" rows="4" required
+                        placeholder="Plan de contingencia, número de sesiones estimadas, agentes físicos a aplicar y ejercicios terapéuticos..."></textarea>
                 </div>
             </div>
 
@@ -99,5 +99,8 @@
     <footer>
         <p>&copy; 2026 KineVital - Sistema de Gestión Interna. Restringido para personal autorizado.</p>
     </footer>
+
+    <script src="../js/header.js"></script>
 </body>
+
 </html>

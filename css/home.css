@@ -13,10 +13,6 @@
     display: block;
 }
 
-.container .instalaciones {
-    margin-top: 4.2rem;
-}
-
 .img-container {
     display: flex;
     flex-direction: row;
@@ -29,4 +25,13 @@
     width: 35rem;
     height: auto;
     border-radius: 0.5rem;
+}
+
+.container .quienes-somos {
+    margin-top: 4.2rem;
+}
+
+.quienes-somos p{
+    margin-bottom: 1rem;
+    text-align: center;
 }

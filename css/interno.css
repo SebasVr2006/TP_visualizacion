@@ -34,7 +34,7 @@
     background-color: #dc3545;
     color: white;
     padding: 0.4rem 1rem;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     text-decoration: none;
 }
 
@@ -175,6 +175,7 @@ tr:hover {
     font-size: 0.9rem;
     color: var(--secondary);
     font-weight: normal;
+    align-self: center;
 }
 
 @media (max-width: 768px) {
