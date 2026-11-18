@@ -346,18 +346,27 @@ a:focus-visible {
 }
 
 .valores-cta h2 {
-  margin-bottom: 1.25rem;
+ font-family: var(--titulos);
+    font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1.2;
+    letter-spacing: -.02em;
+    color: var(--azul-titulo);
+    max-width: 34rem;
+    margin: 0 auto 1.25rem;
 }
 
 .valores-cta p {
   color: var(--texto-suave);
-  max-width: 28rem;
+  font-size: 1.3rem;
+  max-width: 32rem;
   margin-bottom: 2rem;
 }
 
 .valores-cta .boton {
-  font-size: 1.1rem;
-  padding: 1rem 2.2rem;
+  font-size: 1.35rem;
+  padding: 2rem 3rem;
+  color:#13323f;
 }
 
 .pie {
@@ -414,7 +423,7 @@ a:focus-visible {
 }
 
 .valores-cta {
-  order: -1;
+  order: -1; 
 }
 
   .equipo-grilla {
