@@ -42,7 +42,7 @@ a:focus-visible {
 }
 
 .contenedor {
-  max-width: 1160px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 1.5rem
 }
@@ -62,7 +62,7 @@ a:focus-visible {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: .9rem 0
+  padding: .9rem 1.5rem
 }
 
 .logotipo {
@@ -130,9 +130,6 @@ a:focus-visible {
   background: linear-gradient(var(--azul) calc(100% - var(--solape)), var(--fondo) 0)
 }
 
-.portada .contenedor {
-  max-width: 1280px
-}
 
 .portada-texto {
   max-width: 46rem;
@@ -150,7 +147,7 @@ a:focus-visible {
 }
 
 .portada p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #d3e3ea;
   max-width: 36rem;
   margin-bottom: 2rem
@@ -183,7 +180,7 @@ a:focus-visible {
   font-family: var(--titulos);
   font-weight: 700;
   font-size: clamp(1.8rem, 3.6vw, 2.4rem);
-  line-height: 1.2;
+  line-height: 1.3;
   letter-spacing: -.02em;
   color: #fff;
   margin-bottom: 1.25rem
@@ -191,7 +188,8 @@ a:focus-visible {
 
 .proposito p {
   color: #d3e3ea;
-  max-width: 34rem
+  max-width: 34rem;
+  font-weight: 500;
 }
 
 .proposito .destacado {
@@ -199,7 +197,7 @@ a:focus-visible {
   font-size: 1.3rem;
   font-weight: 500;
   line-height: 1.55;
-  color: #fff
+  color: #d3e3ea
 }
 
 .proposito img {
@@ -289,6 +287,7 @@ a:focus-visible {
 
 .equipo-intro p {
   margin-top: 1rem;
+  font-size: 1.4rem;
   color: var(--texto-suave)
 }
 
@@ -425,6 +424,47 @@ a:focus-visible {
   .equipo-grilla {
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem
+  }
+}
+
+@media (min-width:900px) {
+  .portada {
+    padding-top: 4.5rem;
+    --solape: 4.5rem
+  }
+
+  .encabezado .contenedor,
+  .portada .contenedor {
+    max-width: 1440px
+  }
+
+  .portada .contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3.5rem;
+    align-items: center;
+    padding-bottom: calc(var(--solape) + 3rem)
+  }
+
+  .portada-texto {
+    margin-bottom: 0
+  }
+
+  .portada h1 {
+    font-size: clamp(2rem, 3.4vw, 3rem)
+  }
+
+  .foto-equipo {
+    width: calc(100% - 1.2rem);
+    aspect-ratio: 2/1;
+    border-radius: 2.5rem;
+    box-shadow: 1.2rem 1.2rem 0 #bfe3dd
+  }
+}
+
+@media (min-width:1200px) {
+  .portada .contenedor {
+    grid-template-columns: 1fr 1.6fr
   }
 }
 
