@@ -341,32 +341,23 @@ a:focus-visible {
   max-width: 22rem
 }
 
-/* Cierre */
-.cta {
-  padding: 5rem 0;
-  text-align: center
+.valores-lista h2 {
+  margin-bottom: 1.5rem;
 }
 
-.cta h2 {
-  font-family: var(--titulos);
-  font-weight: 700;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  line-height: 1.2;
-  letter-spacing: -.02em;
-  color: var(--azul-titulo);
-  max-width: 34rem;
-  margin: 0 auto 1.25rem
+.valores-cta h2 {
+  margin-bottom: 1.25rem;
 }
 
-.cta p {
+.valores-cta p {
   color: var(--texto-suave);
-  max-width: 32rem;
-  margin: 0 auto 2.25rem
+  max-width: 28rem;
+  margin-bottom: 2rem;
 }
 
-.cta .boton {
+.valores-cta .boton {
   font-size: 1.1rem;
-  padding: 1rem 2.2rem
+  padding: 1rem 2.2rem;
 }
 
 .pie {
@@ -416,10 +407,15 @@ a:focus-visible {
     gap: 5rem
   }
 
-  .valores-grilla {
-    grid-template-columns: .8fr 1.2fr;
-    gap: 5rem
-  }
+.valores-grilla {
+  grid-template-columns: .8fr 1.2fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.valores-cta {
+  order: -1;
+}
 
   .equipo-grilla {
     grid-template-columns: repeat(3, 1fr);
