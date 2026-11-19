@@ -31,7 +31,7 @@
 /* Portada */
 .sv-hero { background: var(--azul); color: #fff; padding: 3.5rem 0; }
 .sv-hero .sv-contenedor { display: grid; gap: 2.5rem; align-items: center; }
-.sv-hero h1 { font: 800 clamp(2.4rem, 6vw, 3.8rem)/1.1 var(--titulos); letter-spacing: -.03em; margin-bottom: 1.25rem; }
+.sv-hero h1 { font: 800 clamp(2.5em, 6vw, 3.5rem)/1.1 var(--titulos); letter-spacing: -.03em; margin-bottom: 1.25rem; }
 .sv-hero p { font-size: 1.2rem; color: #d3e3ea; max-width: 34rem; margin-bottom: 2rem; }
 .sv-hero img { display: block; height: auto; width: calc(100% - .7rem); aspect-ratio: 3/2; object-fit: cover; border-radius: 1.75rem; box-shadow: .7rem .7rem 0 #bfe3dd; }
 
