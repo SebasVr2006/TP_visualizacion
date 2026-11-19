@@ -147,7 +147,7 @@ main {
 }
 
 .hero-image {
-    max-height: 500px;
+    max-height: 40vh;
     width: auto;
     border-radius: 8px;
 }
