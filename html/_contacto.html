@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - KineVital</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1fr solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header-container" data-include="header.html"></header>
+
+    <main class="container grid-2">
+        <div>
+            <h1 class="section-title">Por favor, env&iacute;e su consulta...</h1>
+            <form action="../index.html" method="GET">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electr&oacute;nico</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Consulta o Especialidad de inter&eacute;s</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Consulta</button>
+            </form>
+        </div>
+        <div>
+            <h2 style="color: var(--primary); margin-bottom: 1rem;">Información de Contacto</h2>
+            <p style="margin-bottom: 0.5rem;"><strong>Dirección:</strong> Av. Salud Central 1234, Ciudad</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Teléfono:</strong> +54 11 2345-6789</p>
+            <p style="margin-bottom: 1.5rem;"><strong>Horarios:</strong> Lunes a Viernes de 8:00 a 20:00 hs</p>
+            <div
+                style="background: #e0e0e0; height: 200px; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: #555;">
+                <img src="../img/UNLAM.jpg" alt="Mapa de Ubicaci&oacute;n" class="instalaciones-image" />
+            </div>
+        </div>
+    </main>
+
+    <div id="popup-overlay">
+        <div class="popup-card">
+
+            <div
+                style="width: 60px; height: 60px; background-color: var(--secondary); color: var(--white); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 1.2rem auto; font-size: 2rem; font-weight: bold;">
+                ✓
+            </div>
+
+            <h3 style="color: var(--primary); margin-bottom: 0.8rem; font-size: 1.4rem;">¡Enviado!</h3>
+
+            <p style="color: var(--dark); font-size: 1rem; margin-bottom: 1.5rem;">
+                Consulta enviada satisfactoriamente, le responderemos a la brevedad posible.
+            </p>
+
+            <!-- Botón que usa tus clases corporativas -->
+            <button type="button" id="btn-aceptar-popup" class="btn w-100">Aceptar</button>
+
+            <p style="color: var(--gray); font-size: 0.8rem; margin-top: 1rem;">
+                Redirigiendo automáticamente en unos segundos...
+            </p>
+
+        </div>
+    </div>
+
+    <footer id="footer-container" data-include="footer.html"></footer>
+
+    <script src="../js/contacto.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+
+</body>
+
+</html>
