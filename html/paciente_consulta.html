@@ -1,98 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - KineVital</title>
+    <title>Consulta Médica - KineVital</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.4rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1fr solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-    </style>
 </head>
-
 <body>
 
     <header id="header-container" data-include="paciente_header.html"></header>
 
-
-    <main class="container grid-2">
-        <div>
-            <h1 class="section-title">Por favor, env&iacute;e su consulta...</h1>
-            <form action="../index.html" method="GET">
-                <div class="form-group">
-                    <label for="nombre">Nombre Completo</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="correo">Correo Electr&oacute;nico</label>
-                    <input type="email" id="correo" name="correo" required>
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Consulta o Especialidad de inter&eacute;s</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn">Enviar Consulta</button>
-            </form>
-        </div>
-        <div>
-            <h2 style="color: var(--primary); margin-bottom: 1rem;">Información de Contacto</h2>
-            <p style="margin-bottom: 0.5rem;"><strong>Dirección:</strong> Av. Salud Central 1234, Ciudad</p>
-            <p style="margin-bottom: 0.5rem;"><strong>Teléfono:</strong> +54 11 2345-6789</p>
-            <p style="margin-bottom: 1.5rem;"><strong>Horarios:</strong> Lunes a Viernes de 8:00 a 20:00 hs</p>
-            <div
-                style="background: #e0e0e0; height: 200px; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: #555;">
-                <img src="../img/UNLAM.jpg" alt="Mapa de Ubicaci&oacute;n" class="instalaciones-image" />
+    <main class="container">
+        <!-- Encabezado exclusivo de área privada -->
+        <div class="patient-banner">
+            <div>
+                <span class="badge-paciente">Área de Pacientes</span>
+                <h1 class="hero-title" style="margin-bottom: 0.3rem; font-size: 2rem;">Consulta con tu Kinesiólogo</h1>
+                <p style="color: var(--gray);">Envía dudas sobre tu rehabilitación, ejercicios o evolución directamente a tu equipo tratante.</p>
             </div>
+            <div class="patient-id-box">
+                <small>Paciente registrado</small>
+                <strong>N° Historia: #KV-4092</strong>
+            </div>
+        </div>
+
+        <!-- Diseño asimétrico: Formulario principal (izq) + Info del tratamiento (der) -->
+        <div class="consulta-layout">
+            
+            <!-- Columna Izquierda: Formulario Clínico -->
+            <section class="card-panel">
+                <h2 class="section-title" style="font-size: 1.4rem; margin-bottom: 1.5rem;">Redactar Consulta Clínica</h2>
+                
+                <form id="form-consulta-paciente">
+                    <div class="grid-2" style="gap: 1rem; align-items: start;">
+                        <div class="form-group">
+                            <label for="especialidad">Área de Rehabilitación</label>
+                            <select id="especialidad" name="especialidad" required>
+                                <option value="">Selecciona tu área...</option>
+                                <option value="traumatologia">Kinesiología Traumatológica</option>
+                                <option value="deportiva">Rehabilitación Deportiva</option>
+                                <option value="neurologica">Kinesiología Neurológica</option>
+                                <option value="respiratoria">Kinesiología Respiratoria</option>
+                                <option value="rpg">RPG / Postura</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profesional">Profesional Tratante</label>
+                            <select id="profesional" name="profesional">
+                                <option value="asignado">Mi kinesiólogo asignado</option>
+                                <option value="guardia">Equipo de guardia clínica</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="motivo">Motivo Principal</label>
+                        <select id="motivo" name="motivo" required>
+                            <option value="ejercicios">Duda sobre rutina de ejercicios en casa</option>
+                            <option value="molestia">Consulta por dolor o molestia post-sesión</option>
+                            <option value="estudios">Envío de resultados o estudios médicos</option>
+                            <option value="turno">Reprogramación o consulta de sesiones</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Detalle de tu consulta</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Describe tus síntomas, dudas sobre los movimientos indicados o cualquier novedad en tu recuperación..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adjunto">Adjuntar estudio o imagen (opcional)</label>
+                        <input type="file" id="adjunto" name="adjunto" accept=".pdf,.jpg,.jpeg,.png">
+                    </div>
+
+                    <button type="submit" class="btn w-100">Enviar Consulta al Especialista</button>
+                </form>
+            </section>
+
+            <!-- Columna Derecha: Contexto del Paciente (reemplaza al mapa) -->
+            <aside class="sidebar-paciente">
+                
+                <!-- Tarjeta de Próximo Turno -->
+                <div class="card-panel highlight-card">
+                    <h3 style="color: var(--primary); margin-bottom: 0.8rem;">Tu Próxima Sesión</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Fecha:</strong> Jueves, 16:30 hs</p>
+                    <p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Especialidad:</strong> Rehab. Traumatológica</p>
+                    <p style="font-size: 0.95rem; color: var(--gray);"><strong>Consultorio:</strong> Box 3 - Planta Baja</p>
+                </div>
+
+                <!-- Tarjeta de Historial Reciente -->
+                <div class="card-panel">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Consultas Recientes</h3>
+                    
+                    <div class="historial-item">
+                        <div class="historial-header">
+                            <span class="estado-respondido">Respondida</span>
+                            <small>Hace 4 días</small>
+                        </div>
+                        <p class="historial-titulo">Duda sobre elongación lumbar</p>
+                        <p class="historial-respuesta">"Puedes realizar 3 series suaves sin llegar al punto de dolor..."</p>
+                    </div>
+
+                    <div class="historial-item" style="border-bottom: none; padding-bottom: 0;">
+                        <div class="historial-header">
+                            <span class="estado-pendiente">En revisión</span>
+                            <small>Ayer</small>
+                        </div>
+                        <p class="historial-titulo">Resonancia de rodilla derecha</p>
+                    </div>
+                </div>
+
+                <!-- Aviso de Urgencias -->
+                <div class="info-alert">
+                    <strong>¿Dolor agudo o urgencia?</strong>
+                    <p>Este canal tiene un tiempo de respuesta de 24 hs hábiles. Para atención inmediata comunícate al <strong>+54 11 2345-6789</strong>.</p>
+                </div>
+
+            </aside>
         </div>
     </main>
 
+    <!-- Tu Pop-Up original mantenido intacto -->
     <div id="popup-overlay">
         <div class="popup-card">
-
-            <div
-                style="width: 60px; height: 60px; background-color: var(--secondary); color: var(--white); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 1.2rem auto; font-size: 2rem; font-weight: bold;">
-                ✓
-            </div>
-
-            <h3 style="color: var(--primary); margin-bottom: 0.8rem; font-size: 1.4rem;">¡Enviado!</h3>
-
-            <p style="color: var(--dark); font-size: 1rem; margin-bottom: 1.5rem;">
-                Consulta enviada satisfactoriamente, le responderemos a la brevedad posible.
-            </p>
-
-            <button type="button" id="btn-aceptar-popup" class="btn w-100">Aceptar</button>
-
-            <p style="color: var(--gray); font-size: 0.8rem; margin-top: 1rem;">
-                Redirigiendo automáticamente en unos segundos...
-            </p>
-
+            <div style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem;">✓</div>
+            <h3 style="color: var(--primary); margin-bottom: 0.5rem;">¡Consulta Registrada!</h3>
+            <p style="color: var(--gray); margin-bottom: 1.5rem;">Tu mensaje fue enviado a tu kinesiólogo. Recibirás una notificación cuando sea respondido.</p>
+            <button id="btn-cerrar-popup" class="btn w-100">Aceptar</button>
+            <p style="font-size: 0.8rem; color: var(--gray); margin-top: 1rem;">Redirigiendo automáticamente en unos segundos...</p>
         </div>
     </div>
 
     <footer id="footer-container" data-include="footer.html"></footer>
 
-    <script src="../js/contacto.js"></script>
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
 
 </body>
-
 </html>

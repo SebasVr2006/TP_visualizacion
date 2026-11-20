@@ -352,6 +352,172 @@ a {
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------/*
 
+/*------------------------------------------------------------ Paciente_Consulta.html -----------------------------------------------------------/*
+/* --- ESTILOS EXCLUSIVOS ÁREA DE CONSULTA PACIENTES --- */
+.patient-banner {
+    background-color: var(--white);
+    padding: 1.8rem 2rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.badge-paciente {
+    display: inline-block;
+    background-color: rgba(87, 197, 182, 0.18);
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.patient-id-box {
+    background-color: var(--light);
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    text-align: right;
+}
+
+.patient-id-box small {
+    display: block;
+    color: var(--gray);
+    font-size: 0.8rem;
+}
+
+.patient-id-box strong {
+    color: var(--primary);
+    font-size: 0.95rem;
+}
+
+/* Layout asimétrico 65% formulario / 35% barra lateral */
+.consulta-layout {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.card-panel {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+}
+
+.highlight-card {
+    border-top: 4px solid var(--secondary);
+}
+
+/* Mejora de selects y textareas coherentes con tus inputs */
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--secondary);
+}
+
+/* Historial en barra lateral */
+.historial-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.historial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+.historial-header small {
+    color: var(--gray);
+    font-size: 0.8rem;
+}
+
+.estado-respondido {
+    background-color: #d4edda;
+    color: #155724;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+}
+
+.estado-pendiente {
+    background-color: #fff3cd;
+    color: #856404;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+}
+
+.historial-titulo {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--dark);
+}
+
+.historial-respuesta {
+    font-size: 0.85rem;
+    color: var(--gray);
+    font-style: italic;
+    margin-top: 0.3rem;
+}
+
+.info-alert {
+    background-color: rgba(26, 95, 122, 0.08);
+    border-left: 4px solid var(--primary);
+    padding: 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--dark);
+}
+
+.info-alert strong {
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+/* Ajuste responsivo para el nuevo layout */
+@media (max-width: 768px) {
+    .consulta-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .patient-id-box {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+.vector-perfil{
+    width: 3px;
+    height: auto;
+}
+/*-----------------------------------------------------------------------------------------------------------------------------------------------/*
+
 /*-------------------------------------------------- Formulario de Contacto Generico --------------------------------------------------/*
         /* Estilos complementarios específicos para Contacto y Mapa */
         .mapa-wrapper {

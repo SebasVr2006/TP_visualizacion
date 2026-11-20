@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet - Agenda de Turnos</title>
+    <!-- Tus dos hojas de estilo originales -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/paciente-historia_clinica.css">
+</head>
+<body>
+
+    <header id="header-container" data-include="paciente_header.html"></header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+                <div>
+                    <h1 class="section-title" style="margin-bottom: 0.5rem;">Mis Turnos Agendados</h1>
+                    <p class="hero-text" style="margin-bottom: 0;">Consulta tus próximas sesiones de rehabilitación kinésica.</p>
+                </div>
+                <a href="#" class="btn">+ Nuevo Turno</a>
+            </div>
+
+            <!-- CUADRO DE BÚSQUEDA IDÉNTICO A HISTORIA CLÍNICA (.search-box) -->
+            <div class="search-box">
+                <input type="text" id="buscadorTurnos" placeholder="Buscar por profesional, especialidad o fecha..." onkeyup="filtrarTurnos()">
+                <button class="btn" onclick="filtrarTurnos()">Buscar</button>
+            </div>
+
+            <!-- GRILLA / TABLA IDÉNTICA A HISTORIA CLÍNICA (.table-responsive) -->
+            <div class="table-responsive">
+                <table id="tablaTurnos">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Profesional Médico</th>
+                            <th>Especialidad</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaTurnos">
+                        <tr>
+                            <td><strong>20/11/2026</strong></td>
+                            <td>09:30 hs</td>
+                            <td>Lic. Patricia Rodríguez</td>
+                            <td><span class="badge badge-trauma">Kinesiología Traumatológica</span></td>
+                            <td>Confirmado</td>
+                            <td>
+                                <button class="btn" style="padding: 0.45rem 0.9rem; font-size: 0.85rem; background-color: #d9534f;" onclick="abrirModalCancelar(this, '20/11/2026 - 09:30 hs', 'Lic. Patricia Rodríguez')">Cancelar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>24/11/2026</strong></td>
+                            <td>11:00 hs</td>
+                            <td>Lic. Mariano Gómez</td>
+                            <td><span class="badge badge-sport">Rehabilitación Deportiva (LCA)</span></td>
+                            <td>Confirmado</td>
+                            <td>
+                                <button class="btn" style="padding: 0.45rem 0.9rem; font-size: 0.85rem; background-color: #d9534f;" onclick="abrirModalCancelar(this, '24/11/2026 - 11:00 hs', 'Lic. Mariano Gómez')">Cancelar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>27/11/2026</strong></td>
+                            <td>16:15 hs</td>
+                            <td>Lic. Patricia Rodríguez</td>
+                            <td><span class="badge badge-trauma">Fisioterapia y RPG</span></td>
+                            <td>Pendiente</td>
+                            <td>
+                                <button class="btn" style="padding: 0.45rem 0.9rem; font-size: 0.85rem; background-color: #d9534f;" onclick="abrirModalCancelar(this, '27/11/2026 - 16:15 hs', 'Lic. Patricia Rodríguez')">Cancelar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p id="sinResultados" style="display: none; text-align: center; padding: 2rem; color: var(--gray);">No se encontraron turnos con ese criterio de búsqueda.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- POP-UP DE CONFIRMACIÓN (#popup-overlay de style.css) -->
+    <div id="popup-overlay">
+        <div class="popup-card">
+            <h2 class="section-title" style="margin-bottom: 1rem;">¿Cancelar Turno?</h2>
+            <p id="detalleTurnoCancelar" class="hero-text" style="font-size: 1rem; margin-bottom: 1.5rem;"></p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <button class="btn" style="background-color: var(--gray);" onclick="cerrarModal()">Volver</button>
+                <button class="btn" style="background-color: #d9534f;" onclick="confirmarCancelacion()">Sí, Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer-container" data-include="footer.html"></footer>
+
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    
+    <!-- JAVASCRIPT PARA FILTRAR Y CANCELAR -->
+    <script>
+        let filaSeleccionada = null;
+
+        function filtrarTurnos() {
+            const texto = document.getElementById('buscadorTurnos').value.toLowerCase();
+            const filas = document.querySelectorAll('#listaTurnos tr');
+            let visibles = 0;
+
+            filas.forEach(fila => {
+                const contenido = fila.textContent.toLowerCase();
+                if (contenido.includes(texto)) {
+                    fila.style.display = '';
+                    visibles++;
+                } else {
+                    fila.style.display = 'none';
+                }
+            });
+
+            document.getElementById('sinResultados').style.display = visibles === 0 ? 'block' : 'none';
+        }
+
+        function abrirModalCancelar(boton, fechaHora, profesional) {
+            filaSeleccionada = boton.closest('tr');
+            document.getElementById('detalleTurnoCancelar').innerHTML = 
+                `Estás por cancelar el turno del <strong>${fechaHora}</strong> con <strong>${profesional}</strong>.`;
+            document.getElementById('popup-overlay').classList.add('mostrar');
+        }
+
+        function cerrarModal() {
+            document.getElementById('popup-overlay').classList.remove('mostrar');
+            filaSeleccionada = null;
+        }
+
+        function confirmarCancelacion() {
+            if (filaSeleccionada) {
+                const celdaEstado = filaSeleccionada.cells[4];
+                celdaEstado.innerHTML = '<strong style="color: #d9534f;">Cancelado</strong>';
+                
+                const btn = filaSeleccionada.querySelector('button');
+                btn.disabled = true;
+                btn.textContent = 'Cancelado';
+                btn.style.opacity = '0.5';
+                btn.style.cursor = 'not-allowed';
+            }
+            cerrarModal();
+        }
+    </script>
+</body>
+</html>
