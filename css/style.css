@@ -64,6 +64,7 @@ main {
 
 .nav-menu {
     display: flex;
+    align-items: center;
     list-style: none;
     gap: 1.5rem;
 }
@@ -77,8 +78,27 @@ main {
     border-bottom: 3px solid transparent;
 }
 
+.nav-menu a.vector-perfil {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border-bottom: none;
+}
+
 .nav-menu a:hover {
     color: var(--primary);
+}
+
+.nav-menu a.btn-cerrar-sesion-paciente {
+    border-bottom: none;
+}
+
+.vector-perfil.activo .logo-titulo {
+    filter: brightness(0) invert(1);
+}
+
+.vector-perfil .logo-titulo {
+    margin-right: 0;
 }
 
 /* --- ESTRUCTURA GENERAL --- */
@@ -510,11 +530,6 @@ a {
         width: 100%;
         text-align: left;
     }
-}
-
-.vector-perfil{
-    width: 3px;
-    height: auto;
 }
 /*-----------------------------------------------------------------------------------------------------------------------------------------------/*
 
