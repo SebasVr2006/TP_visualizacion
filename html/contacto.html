@@ -1,98 +1,208 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - KineVital</title>
+    <title>Contacto y Turnos - KineVital</title>
+    <!-- Asegúrate de que la ruta coincida con el nombre y ubicación de tu archivo CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.4rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1fr solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-    </style>
 </head>
-
 <body>
+
+    <!-- ENCABEZADO / NAVEGACIÓN -->
 
     <header id="header-container" data-include="header.html"></header>
 
-    <main class="container grid-2">
-        <div>
-            <h1 class="section-title">Por favor, env&iacute;e su consulta...</h1>
-            <form action="../index.html" method="GET">
-                <div class="form-group">
-                    <label for="nombre">Nombre Completo</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="correo">Correo Electr&oacute;nico</label>
-                    <input type="email" id="correo" name="correo" required>
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Consulta o Especialidad de inter&eacute;s</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn">Enviar Consulta</button>
-            </form>
-        </div>
-        <div>
-            <h2 style="color: var(--primary); margin-bottom: 1rem;">Información de Contacto</h2>
-            <p style="margin-bottom: 0.5rem;"><strong>Dirección:</strong> Av. Salud Central 1234, Ciudad</p>
-            <p style="margin-bottom: 0.5rem;"><strong>Teléfono:</strong> +54 11 2345-6789</p>
-            <p style="margin-bottom: 1.5rem;"><strong>Horarios:</strong> Lunes a Viernes de 8:00 a 20:00 hs</p>
-            <div
-                style="background: #e0e0e0; height: 200px; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: #555;">
-                <img src="../img/UNLAM.jpg" alt="Mapa de Ubicaci&oacute;n" class="instalaciones-image" />
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container">
+        
+        <!-- Banner superior siguiendo el estilo de patient-banner -->
+        <section class="patient-banner">
+            <div>
+                <span class="badge-paciente">Atención al Paciente</span>
+                <h1 style="color: var(--primary); margin-bottom: 0.3rem;">Contacto y Solicitud de Turnos</h1>
+                <p style="color: var(--gray);">Completá el formulario o acercate a nuestro centro. Te responderemos a la brevedad.</p>
             </div>
+            <div class="patient-id-box">
+                <small>Horarios de Atención</small>
+                <strong>Lun a Vie: 8:00 a 20:00 hs</strong>
+            </div>
+        </section>
+
+        <!-- Layout asimétrico: Formulario a la izquierda / Info y Mapa a la derecha -->
+        <div class="consulta-layout">
+            
+            <!-- COLUMNA IZQUIERDA: FORMULARIO -->
+            <section class="card-panel">
+                <h2 class="section-title" style="margin-bottom: 1.5rem;">Envianos tu Consulta</h2>
+                
+                <form id="form-contacto">
+                    <div class="form-group">
+                        <label for="nombre">Nombre y Apellido *</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono o WhatsApp *</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 11 2345-6789" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cobertura">Cobertura Médica *</label>
+                        <select id="cobertura" name="cobertura" required>
+                            <option value="" disabled selected>Seleccioná tu cobertura...</option>
+                            <option value="Particular">Particular</option>
+                            <option value="Obra Social">Obra Social</option>
+                            <option value="Prepaga">Prepaga</option>
+                        </select>
+                    </div>
+
+                    <!-- Campo dinámico opcional que aparece si elige Obra Social o Prepaga -->
+                    <div class="form-group campo-oculto" id="grupo-nombre-cobertura">
+                        <label for="nombre-cobertura">¿Cuál Obra Social o Prepaga tenés?</label>
+                        <input type="text" id="nombre-cobertura" name="nombre_cobertura" placeholder="Ej: OSDE, Swiss Medical, IOMA, Galeno...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="especialidad">Motivo de consulta o especialidad *</label>
+                        <select id="especialidad" name="especialidad" required>
+                            <option value="" disabled selected>Seleccioná una especialidad o motivo...</option>
+                            <option value="Rehabilitación Traumatológica">Rehabilitación Traumatológica</option>
+                            <option value="Rehabilitación Deportiva">Rehabilitación Deportiva</option>
+                            <option value="RPG / Postura">RPG (Reeducación Postural Global)</option>
+                            <option value="Kinesiología Neurológica">Kinesiología Neurológica</option>
+                            <option value="Kinesiología Respiratoria">Kinesiología Respiratoria</option>
+                            <option value="Consulta General / Presupuesto">Consulta General / Aranceles</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Comentarios adicionales (opcional)</label>
+                        <textarea id="mensaje" name="mensaje" rows="3" placeholder="Contanos brevemente tu lesión, disponibilidad horaria o si contás con orden médica..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn w-100">Enviar Consulta</button>
+                </form>
+            </section>
+
+            <!-- COLUMNA DERECHA: UBICACIÓN, MAPA Y CONTACTO DIRECTO -->
+            <aside>
+                <!-- Tarjeta de Ubicación y Mapa Interactivo -->
+                <div class="card-panel highlight-card">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">¿Dónde Estamos?</h3>
+                    
+                    <div class="dato-contacto">
+                        <span>📍</span>
+                        <div>
+                            <strong>Dirección</strong>
+                            <span>Av. Santa Fe 3250, Piso 2 - Palermo, CABA</span>
+                        </div>
+                    </div>
+
+                    <div class="dato-contacto">
+                        <span>📞</span>
+                        <div>
+                            <strong>Teléfono / WhatsApp</strong>
+                            <span>+54 11 2345-6789</span>
+                        </div>
+                    </div>
+
+                    <!-- Mapa Interactivo de Google Maps -->
+                    <div class="mapa-wrapper">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.626482202634!2d-58.41326992346388!3d-34.58831635668657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca83d2aa1521%3A0xc7a941fe0d021ba0!2sAv.%20Sta.%20Fe%203250%2C%20C1425BGH%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación KineVital">
+                        </iframe>
+                    </div>
+
+                    <a href="https://wa.me/5491123456789?text=Hola%20KineVital,%20quisiera%20hacer%20una%20consulta%20por%20turnos." target="_blank" class="btn-whatsapp-directo">
+                        Escribir directo por WhatsApp
+                    </a>
+                </div>
+
+                <!-- Alerta informativa -->
+                <div class="info-alert">
+                    <strong>¿Primera consulta?</strong>
+                    Recordá traer tu orden médica (si tenés) y estudios previos (radiografías, resonancias o ecografías) para una mejor evaluación.
+                </div>
+            </aside>
+
         </div>
     </main>
 
+    <!-- POP-UP DE CONFIRMACIÓN -->
     <div id="popup-overlay">
         <div class="popup-card">
-
-            <div
-                style="width: 60px; height: 60px; background-color: var(--secondary); color: var(--white); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 1.2rem auto; font-size: 2rem; font-weight: bold;">
-                ✓
-            </div>
-
-            <h3 style="color: var(--primary); margin-bottom: 0.8rem; font-size: 1.4rem;">¡Enviado!</h3>
-
-            <p style="color: var(--dark); font-size: 1rem; margin-bottom: 1.5rem;">
-                Consulta enviada satisfactoriamente, le responderemos a la brevedad posible.
+            <div style="font-size: 3rem; color: var(--secondary); margin-bottom: 0.5rem;">✓</div>
+            <h3 style="color: var(--primary); margin-bottom: 0.5rem;">¡Consulta Enviada!</h3>
+            <p id="popup-mensaje" style="color: var(--gray); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                Gracias por comunicarte con KineVital. Nuestro equipo se pondrá en contacto a la brevedad.
             </p>
-
-            <!-- Botón que usa tus clases corporativas -->
-            <button type="button" id="btn-aceptar-popup" class="btn w-100">Aceptar</button>
-
-            <p style="color: var(--gray); font-size: 0.8rem; margin-top: 1rem;">
-                Redirigiendo automáticamente en unos segundos...
-            </p>
-
+            <button type="button" id="btn-cerrar-popup" class="btn w-100">Aceptar</button>
         </div>
     </div>
 
-    <footer id="footer-container" data-include="footer.html"></footer>
+    <!-- PIE DE PÁGINA -->
 
-    <script src="../js/contacto.js"></script>
+    <footer id="footer-container" data-include="footer.html"></footer>
+    
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
 
-</body>
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formContacto = document.getElementById('form-contacto');
+            const selectCobertura = document.getElementById('cobertura');
+            const grupoNombreCobertura = document.getElementById('grupo-nombre-cobertura');
+            const inputNombreCobertura = document.getElementById('nombre-cobertura');
+            
+            const popupOverlay = document.getElementById('popup-overlay');
+            const popupMensaje = document.getElementById('popup-mensaje');
+            const btnCerrarPopup = document.getElementById('btn-cerrar-popup');
 
+            // 1. Mostrar campo extra si selecciona Obra Social o Prepaga
+            selectCobertura.addEventListener('change', () => {
+                if (selectCobertura.value === 'Obra Social' || selectCobertura.value === 'Prepaga') {
+                    grupoNombreCobertura.classList.remove('campo-oculto');
+                    inputNombreCobertura.setAttribute('required', 'true');
+                } else {
+                    grupoNombreCobertura.classList.add('campo-oculto');
+                    inputNombreCobertura.removeAttribute('required');
+                    inputNombreCobertura.value = '';
+                }
+            });
+
+            // 2. Manejar envío del formulario
+            formContacto.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const nombre = document.getElementById('nombre').value.trim();
+                const telefono = document.getElementById('telefono').value.trim();
+                const especialidad = document.getElementById('especialidad').value;
+
+                popupMensaje.innerHTML = `Gracias <strong>${nombre}</strong>. Recibimos tu consulta sobre <strong>${especialidad}</strong> y te responderemos al <strong>${telefono}</strong> a la brevedad.`;
+
+                popupOverlay.classList.add('mostrar');
+
+                formContacto.reset();
+                grupoNombreCobertura.classList.add('campo-oculto');
+            });
+
+            // 3. Cerrar el pop-up con el botón o haciendo clic fuera de la tarjeta
+            btnCerrarPopup.addEventListener('click', () => {
+                popupOverlay.classList.remove('mostrar');
+            });
+
+            popupOverlay.addEventListener('click', (e) => {
+                if (e.target === popupOverlay) {
+                    popupOverlay.classList.remove('mostrar');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
