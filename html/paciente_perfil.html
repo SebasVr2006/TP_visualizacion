@@ -1,350 +1,276 @@
 <!DOCTYPE html>
 <html lang="es">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>KineVital - Mi Perfil</title>
-      <link rel="stylesheet" href="../css/style.css" />
-      <link rel="stylesheet" href="../css/paciente-perfil.css" />
-   </head>
-   <body>
 
-    <header id="header-container" data-include="paciente_header.html"></header>
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>KineVital - Mi Perfil</title>
+   <link rel="stylesheet" href="../css/style.css" />
+   <link rel="stylesheet" href="../css/paciente-perfil.css" />
+</head>
 
-      <main>
-         <div class="container">
-            <div style="margin-bottom: 1.5rem">
-               <h1 class="section-title" style="margin-bottom: 0.3rem">
-                  Perfil Interno del Usuario
-               </h1>
-               <p class="hero-text" style="margin-bottom: 0">
-                  Gestiona tu información de contacto y fotografía de credencial
-                  en KineVital.
-               </p>
-            </div>
+<body>
 
-            <div class="perfil-layout">
-               <section class="perfil-card">
-                  <form id="formPerfil" onsubmit="guardarCambios(event)">
-                     <div class="form-grid-2">
-                        <div class="form-group">
-                           <label for="nombreCompleto">Nombre Completo</label>
-                           <input
-                              type="text"
-                              id="nombreCompleto"
-                              value="Juan Pérez"
-                              class="input-bloqueado"
-                              readonly
-                           />
-                        </div>
-                        <div class="form-group">
-                           <label for="dni">DNI / Documento</label>
-                           <input
-                              type="text"
-                              id="dni"
-                              value="12345678"
-                              class="input-bloqueado"
-                              readonly
-                           />
-                        </div>
+   <header id="header-container" data-include="paciente_header.html"></header>
+
+   <main>
+      <div class="container">
+         <div style="margin-bottom: 1.5rem">
+            <h1 class="section-title" style="margin-bottom: 0.3rem">
+               Perfil Interno del Usuario
+            </h1>
+            <p class="hero-text" style="margin-bottom: 0">
+               Gestiona tu información de contacto y fotografía de credencial
+               en KineVital.
+            </p>
+         </div>
+
+         <div class="perfil-layout">
+            <section class="perfil-card">
+               <form id="formPerfil" onsubmit="guardarCambios(event)">
+                  <div class="form-grid-2">
+                     <div class="form-group">
+                        <label for="nombreCompleto">Nombre Completo</label>
+                        <input type="text" id="nombreCompleto" value="Juan Pérez" class="input-bloqueado" readonly />
                      </div>
-
-                     <div class="form-grid-2">
-                        <div class="form-group">
-                           <label for="legajo">Usuario / Legajo</label>
-                           <input
-                              type="text"
-                              id="legajo"
-                              value="legajo123"
-                              class="input-bloqueado"
-                              readonly
-                           />
-                        </div>
-                        <div class="form-group">
-                           <label for="fechaNacimiento"
-                              >Fecha de Nacimiento</label
-                           >
-                           <input
-                              type="date"
-                              id="fechaNacimiento"
-                              value="1990-05-15"
-                              class="input-bloqueado"
-                              readonly
-                           />
-                        </div>
+                     <div class="form-group">
+                        <label for="dni">DNI / Documento</label>
+                        <input type="text" id="dni" value="12345678" class="input-bloqueado" readonly />
                      </div>
-
-                     <div class="form-grid-2">
-                        <div class="form-group">
-                           <label for="telefono">Teléfono de Contacto</label>
-                           <input
-                              type="tel"
-                              id="telefono"
-                              value="+54 9 11 1234-5678"
-                              class="input-bloqueado"
-                              readonly
-                              required
-                           />
-                        </div>
-                        <div class="form-group">
-                           <label for="email">Correo Electrónico</label>
-                           <input
-                              type="email"
-                              id="email"
-                              value="juan.perez@kinevital.com"
-                              class="input-bloqueado"
-                              readonly
-                              required
-                           />
-                        </div>
-                     </div>
-
-                     <div class="aviso-interno">
-                        Los datos de identidad (Nombre, DNI, Legajo y Fecha de
-                        Nacimiento) se encuentran validados de forma interna.
-                        Puedes actualizar tu <strong>Teléfono</strong> y
-                        <strong>Correo Electrónico</strong> presionando
-                        "Modificar Datos".
-                     </div>
-
-                     <div
-                        style="
-                           display: flex;
-                           justify-content: flex-start;
-                           gap: 1rem;
-                        "
-                     >
-                        <button
-                           type="button"
-                           id="btnHabilitarEdicion"
-                           class="btn"
-                           onclick="habilitarEdicion()"
-                        >
-                           Modificar Datos
-                        </button>
-
-                        <button
-                           type="submit"
-                           id="btnGuardar"
-                           class="btn"
-                           style="
-                              display: none;
-                              background-color: var(--primary);
-                           "
-                        >
-                           Guardar Cambios
-                        </button>
-                        <button
-                           type="button"
-                           id="btnCancelar"
-                           class="btn"
-                           style="display: none; background-color: var(--gray)"
-                           onclick="cancelarEdicion()"
-                        >
-                           Cancelar
-                        </button>
-                     </div>
-                  </form>
-               </section>
-
-               <aside class="perfil-card foto-card">
-                  <div class="foto-marco" id="contenedorFoto">
-                     <span class="foto-placeholder" id="inicialesPlaceholder"
-                        >JP</span
-                     >
-                     <img
-                        id="fotoPaciente"
-                        src=""
-                        alt="Foto de Juan Pérez"
-                        style="display: none"
-                     />
                   </div>
 
-                  <h3
-                     style="color: var(--primary); margin-bottom: 0.25rem"
-                     id="tituloFotoNombre"
-                  >
-                     Juan Pérez
-                  </h3>
-                  <p
-                     style="
+                  <div class="form-grid-2">
+                     <div class="form-group">
+                        <label for="legajo">Usuario / Legajo</label>
+                        <input type="text" id="legajo" value="legajo123" class="input-bloqueado" readonly />
+                     </div>
+                     <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                        <input type="date" id="fechaNacimiento" value="1990-05-15" class="input-bloqueado" readonly />
+                     </div>
+                  </div>
+
+                  <div class="form-grid-2">
+                     <div class="form-group">
+                        <label for="telefono">Teléfono de Contacto</label>
+                        <input type="tel" id="telefono" value="+54 9 11 1234-5678" class="input-bloqueado" readonly
+                           required />
+                     </div>
+                     <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" value="juan.perez@kinevital.com" class="input-bloqueado" readonly
+                           required />
+                     </div>
+                  </div>
+
+                  <div class="aviso-interno">
+                     Los datos de identidad (Nombre, DNI, Legajo y Fecha de
+                     Nacimiento) se encuentran validados de forma interna.
+                     Puedes actualizar tu <strong>Teléfono</strong> y
+                     <strong>Correo Electrónico</strong> presionando
+                     "Modificar Datos".
+                  </div>
+
+                  <div class="btn-container">
+                     <button type="button" id="btnHabilitarEdicion" class="btn" onclick="habilitarEdicion()">
+                        Modificar Datos
+                     </button>
+
+
+                     <a href="../index.html" class="nav-link btn-cerrar-sesion-paciente" id="logout-paciente"
+                        style="color: white;">Cerrar Sesión</a>
+
+
+                     <button type="submit" id="btnGuardar" class="btn" style="
+                              display: none;
+                              background-color: var(--primary);
+                           ">
+                        Guardar Cambios
+                     </button>
+                     <button type="button" id="btnCancelar" class="btn"
+                        style="display: none; background-color: var(--gray)" onclick="cancelarEdicion()">
+                        Cancelar
+                     </button>
+                  </div>
+
+               </form>
+            </section>
+
+            <aside class="perfil-card foto-card">
+               <div class="foto-marco" id="contenedorFoto">
+                  <span class="foto-placeholder" id="inicialesPlaceholder">JP</span>
+                  <img id="fotoPaciente" src="" alt="Foto de Juan Pérez" style="display: none" />
+               </div>
+
+               <h3 style="color: var(--primary); margin-bottom: 0.25rem" id="tituloFotoNombre">
+                  Juan Pérez
+               </h3>
+               <p style="
                         color: var(--gray);
                         font-size: 0.85rem;
                         margin-bottom: 1rem;
-                     "
-                  >
-                     Legajo: legajo123
-                  </p>
+                     ">
+                  Legajo: legajo123
+               </p>
 
-                  <label for="inputFoto" class="btn-subir-foto">
-                     Cambiar Foto
-                  </label>
-                  <input
-                     type="file"
-                     id="inputFoto"
-                     accept="image/*"
-                     style="display: none"
-                     onchange="cargarFoto(event)"
-                  />
-                  <p
-                     style="
+               <label for="inputFoto" class="btn-subir-foto">
+                  Cambiar Foto
+               </label>
+               <input type="file" id="inputFoto" accept="image/*" style="display: none" onchange="cargarFoto(event)" />
+               <p style="
                         font-size: 0.78rem;
                         color: var(--gray);
                         margin-top: 0.75rem;
-                     "
-                  >
-                     Formatos: JPG o PNG (Máx. 2MB)
-                  </p>
-               </aside>
-            </div>
-         </div>
-      </main>
-
-      <div id="popup-overlay">
-         <div class="popup-card">
-            <h2 class="section-title" style="margin-bottom: 1rem">
-               ¡Perfil Actualizado!
-            </h2>
-            <p
-               class="hero-text"
-               id="mensajePopup"
-               style="font-size: 1rem; margin-bottom: 1.5rem"
-            >
-               Tus datos de contacto se guardaron correctamente.
-            </p>
-            <button class="btn" onclick="cerrarModal()">Aceptar</button>
+                     ">
+                  Formatos: JPG o PNG (Máx. 2MB)
+               </p>
+            </aside>
          </div>
       </div>
+   </main>
 
-    <footer id="footer-container" data-include="footer.html"></footer>
+   <div id="popup-overlay">
+      <div class="popup-card">
+         <h2 class="section-title" style="margin-bottom: 1rem">
+            ¡Perfil Actualizado!
+         </h2>
+         <p class="hero-text" id="mensajePopup" style="font-size: 1rem; margin-bottom: 1.5rem">
+            Tus datos de contacto se guardaron correctamente.
+         </p>
+         <button class="btn" onclick="cerrarModal()">Aceptar</button>
+      </div>
+   </div>
 
-    <script src="../js/header.js"></script>
-    <script src="../js/footer.js"></script>
+   <footer id="footer-container" data-include="footer.html"></footer>
 
-      <script>
-         let backupContacto = {};
+   <script src="../js/header.js"></script>
+   <script src="../js/footer.js"></script>
 
-         window.addEventListener("DOMContentLoaded", () => {
-            const datosGuardados = JSON.parse(
-               localStorage.getItem("kinevital_perfil_juan"),
-            );
-            if (datosGuardados) {
-               if (datosGuardados.telefono)
-                  document.getElementById("telefono").value =
-                     datosGuardados.telefono;
-               if (datosGuardados.email)
-                  document.getElementById("email").value = datosGuardados.email;
-               if (datosGuardados.foto) mostrarImagen(datosGuardados.foto);
-            }
-         });
+   <script>
+      let backupContacto = {};
 
-         function habilitarEdicion() {
-            const telInput = document.getElementById("telefono");
-            const emailInput = document.getElementById("email");
-
-            backupContacto = {
-               telefono: telInput.value,
-               email: emailInput.value,
-            };
-
-            telInput.removeAttribute("readonly");
-            emailInput.removeAttribute("readonly");
-            telInput.classList.remove("input-bloqueado");
-            emailInput.classList.remove("input-bloqueado");
-            telInput.classList.add("input-editable");
-            emailInput.classList.add("input-editable");
-            telInput.focus();
-
-            document.getElementById("btnHabilitarEdicion").style.display =
-               "none";
-            document.getElementById("btnGuardar").style.display =
-               "inline-block";
-            document.getElementById("btnCancelar").style.display =
-               "inline-block";
+      window.addEventListener("DOMContentLoaded", () => {
+         const datosGuardados = JSON.parse(
+            localStorage.getItem("kinevital_perfil_juan"),
+         );
+         if (datosGuardados) {
+            if (datosGuardados.telefono)
+               document.getElementById("telefono").value =
+                  datosGuardados.telefono;
+            if (datosGuardados.email)
+               document.getElementById("email").value = datosGuardados.email;
+            if (datosGuardados.foto) mostrarImagen(datosGuardados.foto);
          }
+      });
 
-         function cancelarEdicion() {
-            document.getElementById("telefono").value = backupContacto.telefono;
-            document.getElementById("email").value = backupContacto.email;
-            bloquearCampos();
-         }
+      function habilitarEdicion() {
+         const telInput = document.getElementById("telefono");
+         const emailInput = document.getElementById("email");
 
-         function bloquearCampos() {
-            const telInput = document.getElementById("telefono");
-            const emailInput = document.getElementById("email");
+         backupContacto = {
+            telefono: telInput.value,
+            email: emailInput.value,
+         };
 
-            telInput.setAttribute("readonly", true);
-            emailInput.setAttribute("readonly", true);
-            telInput.classList.remove("input-editable");
-            emailInput.classList.remove("input-editable");
-            telInput.classList.add("input-bloqueado");
-            emailInput.classList.add("input-bloqueado");
+         telInput.removeAttribute("readonly");
+         emailInput.removeAttribute("readonly");
+         telInput.classList.remove("input-bloqueado");
+         emailInput.classList.remove("input-bloqueado");
+         telInput.classList.add("input-editable");
+         emailInput.classList.add("input-editable");
+         telInput.focus();
 
-            document.getElementById("btnHabilitarEdicion").style.display =
-               "inline-block";
-            document.getElementById("btnGuardar").style.display = "none";
-            document.getElementById("btnCancelar").style.display = "none";
-         }
+         document.getElementById("btnHabilitarEdicion").style.display =
+            "none";
+         document.getElementById("btnGuardar").style.display =
+            "inline-block";
+         document.getElementById("btnCancelar").style.display =
+            "inline-block";
+      }
 
-         function guardarCambios(event) {
-            event.preventDefault();
+      function cancelarEdicion() {
+         document.getElementById("telefono").value = backupContacto.telefono;
+         document.getElementById("email").value = backupContacto.email;
+         bloquearCampos();
+      }
+
+      function bloquearCampos() {
+         const telInput = document.getElementById("telefono");
+         const emailInput = document.getElementById("email");
+
+         telInput.setAttribute("readonly", true);
+         emailInput.setAttribute("readonly", true);
+         telInput.classList.remove("input-editable");
+         emailInput.classList.remove("input-editable");
+         telInput.classList.add("input-bloqueado");
+         emailInput.classList.add("input-bloqueado");
+
+         document.getElementById("btnHabilitarEdicion").style.display =
+            "inline-block";
+         document.getElementById("btnGuardar").style.display = "none";
+         document.getElementById("btnCancelar").style.display = "none";
+      }
+
+      function guardarCambios(event) {
+         event.preventDefault();
+         const datosActuales =
+            JSON.parse(localStorage.getItem("kinevital_perfil_juan")) || {};
+
+         datosActuales.telefono = document.getElementById("telefono").value;
+         datosActuales.email = document.getElementById("email").value;
+
+         localStorage.setItem(
+            "kinevital_perfil_juan",
+            JSON.stringify(datosActuales),
+         );
+         bloquearCampos();
+
+         document.getElementById("mensajePopup").textContent =
+            "Tus datos de contacto se actualizaron correctamente.";
+         document.getElementById("popup-overlay").classList.add("mostrar");
+      }
+
+      function cargarFoto(event) {
+         const archivo = event.target.files[0];
+         if (!archivo) return;
+
+         const lector = new FileReader();
+         lector.onload = function (e) {
+            const base64Img = e.target.result;
+            mostrarImagen(base64Img);
+
             const datosActuales =
-               JSON.parse(localStorage.getItem("kinevital_perfil_juan")) || {};
-
-            datosActuales.telefono = document.getElementById("telefono").value;
-            datosActuales.email = document.getElementById("email").value;
-
+               JSON.parse(localStorage.getItem("kinevital_perfil_juan")) ||
+               {};
+            datosActuales.foto = base64Img;
             localStorage.setItem(
                "kinevital_perfil_juan",
                JSON.stringify(datosActuales),
             );
-            bloquearCampos();
 
             document.getElementById("mensajePopup").textContent =
-               "Tus datos de contacto se actualizaron correctamente.";
-            document.getElementById("popup-overlay").classList.add("mostrar");
-         }
-
-         function cargarFoto(event) {
-            const archivo = event.target.files[0];
-            if (!archivo) return;
-
-            const lector = new FileReader();
-            lector.onload = function (e) {
-               const base64Img = e.target.result;
-               mostrarImagen(base64Img);
-
-               const datosActuales =
-                  JSON.parse(localStorage.getItem("kinevital_perfil_juan")) ||
-                  {};
-               datosActuales.foto = base64Img;
-               localStorage.setItem(
-                  "kinevital_perfil_juan",
-                  JSON.stringify(datosActuales),
-               );
-
-               document.getElementById("mensajePopup").textContent =
-                  "La fotografía del perfil se actualizó con éxito.";
-               document
-                  .getElementById("popup-overlay")
-                  .classList.add("mostrar");
-            };
-            lector.readAsDataURL(archivo);
-         }
-
-         function mostrarImagen(src) {
-            const img = document.getElementById("fotoPaciente");
-            const placeholder = document.getElementById("inicialesPlaceholder");
-            img.src = src;
-            img.style.display = "block";
-            placeholder.style.display = "none";
-         }
-
-         function cerrarModal() {
+               "La fotografía del perfil se actualizó con éxito.";
             document
                .getElementById("popup-overlay")
-               .classList.remove("mostrar");
-         }
-      </script>
-   </body>
+               .classList.add("mostrar");
+         };
+         lector.readAsDataURL(archivo);
+      }
+
+      function mostrarImagen(src) {
+         const img = document.getElementById("fotoPaciente");
+         const placeholder = document.getElementById("inicialesPlaceholder");
+         img.src = src;
+         img.style.display = "block";
+         placeholder.style.display = "none";
+      }
+
+      function cerrarModal() {
+         document
+            .getElementById("popup-overlay")
+            .classList.remove("mostrar");
+      }
+   </script>
+</body>
+
 </html>
